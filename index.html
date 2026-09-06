@@ -53,19 +53,22 @@
       position: relative;
       z-index: 1;
       min-height: 100vh;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 60px 24px 80px;
+      padding: 24px 24px 32px;
+      gap: 0;
     }
 
     /* COVER ART */
     .cover-wrap {
       position: relative;
-      width: min(420px, 88vw);
+      /* shrink based on whichever axis is the constraint */
+      width: min(340px, 80vw, 32vh);
       aspect-ratio: 1 / 1;
-      margin-bottom: 48px;
+      margin-bottom: clamp(16px, 2.5vh, 36px);
     }
 
     .cover-wrap::after {
@@ -87,7 +90,7 @@
     /* TITLE */
     .title-block {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: clamp(12px, 2vh, 32px);
     }
 
     .artist-name {
@@ -102,7 +105,7 @@
 
     .song-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(72px, 22vw, 148px);
+      font-size: clamp(52px, min(22vw, 11vh), 148px);
       line-height: 0.88;
       letter-spacing: 0.04em;
       color: var(--white);
@@ -118,7 +121,7 @@
 
     /* CTA */
     .cta-wrap {
-      margin-bottom: 52px;
+      margin-bottom: clamp(12px, 2vh, 40px);
     }
 
     .btn-presave {
@@ -157,7 +160,7 @@
       display: flex;
       align-items: center;
       gap: 32px;
-      margin-bottom: 56px;
+      margin-bottom: clamp(12px, 2vh, 40px);
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -221,14 +224,11 @@
 
     /* FOOTER */
     .footer {
-      position: absolute;
-      bottom: 24px;
-      left: 0;
-      right: 0;
       text-align: center;
       font-size: 10px;
       letter-spacing: 0.12em;
       color: rgba(255,255,255,0.18);
+      margin-top: clamp(12px, 2vh, 28px);
     }
 
     @media (prefers-reduced-motion: reduce) {
