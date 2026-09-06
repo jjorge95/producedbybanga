@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BANGA — TELLER</title>
+  <meta name="description" content="TELLER — the debut single from BANGA. Available September 25, 2026." />
+  <meta property="og:title" content="BANGA — TELLER" />
+  <meta property="og:description" content="Debut single available September 25, 2026." />
+  <meta property="og:type" content="music.song" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --black: #000000;
+      --navy-deep: #0A0F1A;
+      --navy-mid: #1C2B3A;
+      --blue-accent: #4A7FA5;
+      --white: #FFFFFF;
+      --white-dim: rgba(255,255,255,0.55);
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(74,127,165,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 50% 100%, rgba(10,15,26,0.9) 0%, transparent 80%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px 80px;
+    }
+
+    /* COVER ART */
+    .cover-wrap {
+      position: relative;
+      width: min(420px, 88vw);
+      aspect-ratio: 1 / 1;
+      margin-bottom: 48px;
+    }
+
+    .cover-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border: 1px solid rgba(74,127,165,0.3);
+      pointer-events: none;
+    }
+
+    .cover-art {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: contrast(1.05) saturate(0.9);
+    }
+
+    /* TITLE */
+    .title-block {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .artist-name {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(11px, 2.5vw, 13px);
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      color: var(--blue-accent);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .song-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(72px, 22vw, 148px);
+      line-height: 0.88;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .release-date {
+      font-size: clamp(12px, 2.8vw, 14px);
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      color: var(--white-dim);
+    }
+
+    /* CTA */
+    .cta-wrap {
+      margin-bottom: 52px;
+    }
+
+    .btn-presave {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 40px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btn-presave:hover,
+    .btn-presave:focus-visible {
+      background: var(--blue-accent);
+      color: var(--white);
+      outline: none;
+    }
+
+    .btn-presave:focus-visible {
+      outline: 2px solid var(--blue-accent);
+      outline-offset: 4px;
+    }
+
+    /* PLATFORMS */
+    .platforms {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 56px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .platform-link {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      text-decoration: none;
+      color: var(--white-dim);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      transition: color 0.2s ease;
+    }
+
+    .platform-link:hover { color: var(--white); }
+
+    .platform-link svg {
+      flex-shrink: 0;
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+    }
+
+    .platform-link:hover svg { opacity: 1; }
+
+    .divider {
+      width: 1px;
+      height: 16px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    /* SOCIAL */
+    .social-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      color: var(--white-dim);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .social-link:hover { color: var(--white); }
+
+    /* FOOTER */
+    .footer {
+      position: absolute;
+      bottom: 24px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.18);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+
+    @media (max-width: 480px) {
+      .page {
+        padding: 48px 20px 72px;
+        justify-content: flex-start;
+        padding-top: 56px;
+      }
+      .cover-wrap {
+        width: min(340px, 92vw);
+        margin-bottom: 36px;
+      }
+      .platforms { gap: 20px; }
+      .divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="page">
+
+  <!-- COVER ART -->
+  <div class="cover-wrap">
+    <img src="cover.png" alt="BANGA — TELLER cover art" class="cover-art" />
+  </div>
+
+  <!-- TITLE -->
+  <div class="title-block">
+    <p class="artist-name">BANGA</p>
+    <h1 class="song-title">TELLER</h1>
+    <p class="release-date">September 25, 2026</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-wrap">
+    <a
+      href="https://hyperfollow.com/bangateller"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-presave"
+      aria-label="Pre-save TELLER on Spotify"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+      </svg>
+      Pre-Save Now
+    </a>
+  </div>
+
+  <!-- PLATFORMS -->
+  <nav class="platforms" aria-label="Streaming platforms">
+    <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="Spotify">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+      </svg>
+      Spotify
+    </a>
+    <div class="divider" aria-hidden="true"></div>
+    <a href="https://music.apple.com" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="Apple Music">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M23.994 6.124a9.23 9.23 0 00-.24-2.19c-.317-1.31-1.062-2.31-2.18-3.043a5.022 5.022 0 00-1.877-.726 10.496 10.496 0 00-1.564-.15c-.04-.003-.083-.01-.124-.013H5.986c-.152.01-.303.017-.455.026C4.786.07 4.043.15 3.34.428 2.004.958 1.04 1.88.475 3.208A5.495 5.495 0 00.05 4.822c-.013.35-.015.7-.015 1.05v12.248c0 .405.017.808.075 1.208.198 1.38.768 2.55 1.815 3.48.666.59 1.44.964 2.298 1.148.486.105.98.154 1.474.167.15.004.3.007.45.007h12.48c.362 0 .724-.012 1.085-.04.728-.055 1.415-.224 2.053-.56 1.257-.664 2.07-1.677 2.47-3.054.152-.527.216-1.067.225-1.614.007-.31.01-.618.01-.928V7.17c0-.35-.004-.698-.017-1.046zm-9.523 11.17c0 .76-.614 1.374-1.374 1.374s-1.374-.614-1.374-1.374v-4.91L8.77 13.77a1.374 1.374 0 11-1.374-2.38l4.027-2.328c.44-.254.984-.248 1.417.016.434.265.7.738.7 1.25l-.069 6.966z"/>
+      </svg>
+      Apple Music
+    </a>
+    <div class="divider" aria-hidden="true"></div>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="YouTube">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
+      YouTube
+    </a>
+  </nav>
+
+  <!-- SOCIAL -->
+  <div class="social-row">
+    <a href="https://instagram.com/producedbybanga" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="BANGA on Instagram">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+      </svg>
+    </a>
+  </div>
+
+  <footer class="footer">
+    © 2026 BANGA MUSIC. All rights reserved.
+  </footer>
+
+</main>
+
+</body>
+</html>
