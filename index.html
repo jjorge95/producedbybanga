@@ -26,6 +26,8 @@
       --blue-accent: #4A7FA5;
       --white: #FFFFFF;
       --white-dim: rgba(255,255,255,0.55);
+      /* single spacing token — everything below keys off this */
+      --gap: clamp(10px, 1.8svh, 22px);
     }
 
     html, body {
@@ -52,23 +54,21 @@
     .page {
       position: relative;
       z-index: 1;
-      min-height: 100vh;
-      height: 100vh;
+      min-height: 100svh;
+      height: 100svh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 24px 24px 32px;
-      gap: 0;
+      padding: 16px 24px 20px;
     }
 
     /* COVER ART */
     .cover-wrap {
       position: relative;
-      /* shrink based on whichever axis is the constraint */
-      width: min(340px, 80vw, 32vh);
+      width: min(340px, 80vw, 36svh);
       aspect-ratio: 1 / 1;
-      margin-bottom: clamp(16px, 2.5vh, 36px);
+      margin-bottom: calc(var(--gap) * 1.4);
     }
 
     .cover-wrap::after {
@@ -90,7 +90,7 @@
     /* TITLE */
     .title-block {
       text-align: center;
-      margin-bottom: clamp(12px, 2vh, 32px);
+      margin-bottom: var(--gap);
     }
 
     .artist-name {
@@ -99,29 +99,29 @@
       font-weight: 500;
       letter-spacing: 0.28em;
       color: var(--blue-accent);
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       text-transform: uppercase;
     }
 
     .song-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(52px, min(22vw, 11vh), 148px);
+      font-size: clamp(52px, min(22vw, 11svh), 148px);
       line-height: 0.88;
       letter-spacing: 0.04em;
       color: var(--white);
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .release-date {
-      font-size: clamp(12px, 2.8vw, 14px);
+      font-size: clamp(11px, 2.5vw, 13px);
       font-weight: 300;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       color: var(--white-dim);
     }
 
     /* CTA */
     .cta-wrap {
-      margin-bottom: clamp(12px, 2vh, 40px);
+      margin-bottom: var(--gap);
     }
 
     .btn-presave {
@@ -131,12 +131,15 @@
       background: var(--white);
       color: var(--black);
       font-family: 'Inter', sans-serif;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       text-decoration: none;
-      padding: 16px 40px;
+      /* fixed width so it never feels form-like on mobile */
+      width: 220px;
+      justify-content: center;
+      padding: 14px 0;
       border: none;
       cursor: pointer;
       transition: background 0.2s ease, color 0.2s ease;
@@ -159,8 +162,8 @@
     .platforms {
       display: flex;
       align-items: center;
-      gap: 32px;
-      margin-bottom: clamp(12px, 2vh, 40px);
+      gap: 24px;
+      margin-bottom: var(--gap);
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -168,20 +171,20 @@
     .platform-link {
       display: flex;
       align-items: center;
-      gap: 7px;
+      gap: 6px;
       text-decoration: none;
-      color: var(--white-dim);
-      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      font-size: 11px;
       font-weight: 400;
       letter-spacing: 0.1em;
       transition: color 0.2s ease;
     }
 
-    .platform-link:hover { color: var(--white); }
+    .platform-link:hover { color: var(--white-dim); }
 
     .platform-link svg {
       flex-shrink: 0;
-      opacity: 0.7;
+      opacity: 0.6;
       transition: opacity 0.2s ease;
     }
 
@@ -189,46 +192,50 @@
 
     .divider {
       width: 1px;
-      height: 16px;
-      background: rgba(255,255,255,0.15);
+      height: 12px;
+      background: rgba(255,255,255,0.12);
     }
 
-    /* SOCIAL — monochrome circular buttons */
+    /* SOCIAL */
     .social-row {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 14px;
+      margin-bottom: var(--gap);
     }
 
     .social-link {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
       text-decoration: none;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.5);
       transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
       -webkit-tap-highlight-color: transparent;
       flex-shrink: 0;
     }
 
     .social-link:hover {
-      background: rgba(255,255,255,0.15);
-      border-color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.28);
       color: #ffffff;
     }
 
     /* FOOTER */
     .footer {
       text-align: center;
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.18);
-      margin-top: clamp(12px, 2vh, 28px);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.15);
+      /* hairline above ties it off as a proper footer */
+      padding-top: var(--gap);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      width: 160px;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -237,15 +244,12 @@
 
     @media (max-width: 480px) {
       .page {
-        padding: 48px 20px 72px;
-        justify-content: flex-start;
-        padding-top: 56px;
+        padding: 12px 20px 16px;
       }
       .cover-wrap {
-        width: min(340px, 92vw);
-        margin-bottom: 36px;
+        width: min(320px, 88vw, 38svh);
       }
-      .platforms { gap: 20px; }
+      .platforms { gap: 18px; }
       .divider { display: none; }
     }
   </style>
