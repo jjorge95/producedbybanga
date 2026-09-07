@@ -27,6 +27,8 @@
       --white: #FFFFFF;
       --white-dim: rgba(255,255,255,0.55);
       --gap: clamp(10px, 1.8svh, 22px);
+      --section-gap: clamp(18px, 2.6svh, 30px);
+      --touch-target: 44px;
     }
 
     html, body {
@@ -53,13 +55,14 @@
     .page {
       position: relative;
       z-index: 1;
+      min-height: 100vh;
       min-height: 100svh;
-      height: 100svh;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 16px 24px 20px;
+      padding: clamp(16px, 2.4svh, 28px) 24px clamp(24px, 3.2svh, 40px);
     }
 
     /* COVER ART */
@@ -120,7 +123,7 @@
 
     /* CTA */
     .cta-wrap {
-      margin-bottom: var(--gap);
+      margin-bottom: var(--section-gap);
     }
 
     .btn-presave {
@@ -137,11 +140,13 @@
       text-decoration: none;
       width: 220px;
       justify-content: center;
-      padding: 14px 0;
+      min-height: 48px;
+      padding: 14px 18px;
       border: none;
       cursor: pointer;
       transition: background 0.2s ease, color 0.2s ease;
       -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
     }
 
     .btn-presave:hover,
@@ -160,16 +165,20 @@
     .platforms {
       display: flex;
       align-items: center;
-      gap: 24px;
-      margin-bottom: var(--gap);
+      column-gap: clamp(18px, 3vw, 28px);
+      row-gap: 8px;
+      margin-bottom: var(--section-gap);
       flex-wrap: wrap;
       justify-content: center;
     }
 
     .platform-link {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 6px;
+      justify-content: center;
+      gap: 7px;
+      min-height: var(--touch-target);
+      padding: 10px 2px;
       text-decoration: none;
       color: rgba(255,255,255,0.4);
       font-size: 11px;
@@ -178,7 +187,14 @@
       transition: color 0.2s ease;
     }
 
-    .platform-link:hover { color: var(--white-dim); }
+    .platform-link:hover,
+    .platform-link:focus-visible { color: var(--white-dim); }
+
+    .platform-link:focus-visible {
+      outline: 2px solid var(--blue-accent);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
 
     .platform-link svg {
       flex-shrink: 0;
@@ -198,8 +214,8 @@
     .social-row {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: var(--gap);
+      gap: 14px;
+      margin-bottom: clamp(20px, 2.8svh, 32px);
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -208,8 +224,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
       background: rgba(255,255,255,0.07);
       border: 1px solid rgba(255,255,255,0.1);
@@ -217,13 +233,20 @@
       color: rgba(255,255,255,0.5);
       transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
       -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
       flex-shrink: 0;
     }
 
-    .social-link:hover {
+    .social-link:hover,
+    .social-link:focus-visible {
       background: rgba(255,255,255,0.14);
       border-color: rgba(255,255,255,0.28);
       color: #ffffff;
+    }
+
+    .social-link:focus-visible {
+      outline: 2px solid var(--blue-accent);
+      outline-offset: 3px;
     }
 
     /* FOOTER */
@@ -242,10 +265,49 @@
     }
 
     @media (max-width: 480px) {
-      .page { padding: 12px 20px 16px; }
-      .cover-wrap { width: min(320px, 88vw, 38svh); }
-      .platforms { gap: 18px; }
+      .page {
+        justify-content: flex-start;
+        padding: 14px 18px 28px;
+      }
+
+      .cover-wrap {
+        width: min(320px, 88vw, 38svh);
+        margin-top: 2px;
+      }
+
+      .btn-presave {
+        width: min(240px, 78vw);
+        min-height: 50px;
+      }
+
+      .platforms {
+        width: min(360px, 100%);
+        column-gap: 18px;
+        row-gap: 4px;
+      }
+
+      .platform-link {
+        min-height: 44px;
+        padding: 10px 4px;
+      }
+
       .divider { display: none; }
+
+      .social-link {
+        width: 46px;
+        height: 46px;
+      }
+    }
+
+    @media (max-height: 760px) and (min-width: 481px) {
+      .page {
+        justify-content: flex-start;
+        padding-top: 14px;
+      }
+
+      .cover-wrap {
+        width: min(320px, 72vw, 34svh);
+      }
     }
   </style>
 </head>
