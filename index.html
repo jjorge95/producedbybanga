@@ -5,18 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BANGA — TELLER</title>
   <meta name="description" content="TELLER — the debut single from BANGA. Available September 25, 2026." />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="BANGA — TELLER" />
   <meta property="og:description" content="Debut single available September 25, 2026." />
   <meta property="og:type" content="music.song" />
-  <meta property="og:image" content="https://producedbybanga.com/banga-teller-cover.webp" />
+  <meta property="og:image" content="https://producedbybanga.com/BANGA.webp" />
   <meta property="og:image:width" content="1340" />
   <meta property="og:image:height" content="894" />
+  <meta property="og:image:alt" content="BANGA — TELLER cover art" />
   <meta property="og:url" content="https://producedbybanga.com" />
+  <meta property="og:site_name" content="BANGA Music" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="https://producedbybanga.com/banga-teller-cover.webp" />
+  <meta name="twitter:title" content="BANGA — TELLER" />
+  <meta name="twitter:description" content="Debut single available September 25, 2026." />
+  <meta name="twitter:image" content="https://producedbybanga.com/BANGA.webp" />
+  <meta name="twitter:image:alt" content="BANGA — TELLER cover art" />
+
+  <!-- Canonical — must be <link>, not <meta> -->
+  <link rel="canonical" href="https://producedbybanga.com" />
+
+  <!-- Misc -->
+  <meta name="theme-color" content="#000000" />
+  <meta name="keywords" content="BANGA, TELLER, debut single, music release 2026, Spotify, Apple Music" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MusicRelease",
+    "name": "TELLER",
+    "byArtist": {
+      "@type": "MusicGroup",
+      "name": "BANGA",
+      "url": "https://producedbybanga.com",
+      "sameAs": [
+        "https://open.spotify.com",
+        "https://soundcloud.com/producedbybanga",
+        "https://instagram.com/producedbybanga"
+      ]
+    },
+    "releaseDate": "2026-09-25",
+    "url": "https://producedbybanga.com",
+    "image": "https://producedbybanga.com/BANGA.webp",
+    "description": "Debut single from BANGA",
+    "musicReleaseFormat": "SingleRelease",
+    "distribution": [
+      {"@type": "MusicStore", "name": "Spotify", "url": "https://open.spotify.com"},
+      {"@type": "MusicStore", "name": "Apple Music", "url": "https://music.apple.com"},
+      {"@type": "MusicStore", "name": "YouTube Music", "url": "https://music.youtube.com"}
+    ]
+  }
+  </script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" />
 
   <style>
     *, *::before, *::after {
@@ -27,8 +76,6 @@
 
     :root {
       --black: #000000;
-      --navy-deep: #0A0F1A;
-      --navy-mid: #1C2B3A;
       --blue-accent: #4A7FA5;
       --white: #FFFFFF;
       --white-dim: rgba(255,255,255,0.55);
@@ -344,7 +391,16 @@
 
   <!-- COVER ART -->
   <div class="cover-wrap">
-    <img src="banga-teller-cover.webp" alt="BANGA — TELLER cover art" class="cover-art" draggable="false" />
+    <img
+      src="BANGA.webp"
+      alt="BANGA — TELLER cover art"
+      class="cover-art"
+      draggable="false"
+      fetchpriority="high"
+      decoding="async"
+      width="340"
+      height="340"
+    />
   </div>
 
   <!-- TITLE -->
@@ -362,8 +418,9 @@
       target="_blank"
       rel="noopener noreferrer"
       class="btn-presave"
+      aria-label="Pre-save TELLER on Spotify"
     >
-      <svg id="cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <svg id="cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
         <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
       </svg>
       <span id="cta-label">Pre-Save Now</span>
@@ -385,7 +442,9 @@
 
     <!-- Spotify -->
     <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="Spotify">
-      <svg xmlns:ns0="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns1="http://www.inkscape.org/namespaces/inkscape" width="16" height="16" viewBox="0 0 1000 1000.0022" version="1.1" id="svg4" ns0:docname="Spotify 2024 Icon Print.svg" xml:space="preserve" ns1:version="1.3 (0e150ed, 2023-07-21)" aria-hidden="true" focusable="false" fill="currentColor"><defs id="defs4" /><namedview id="namedview4" pagecolor="#ffffff" bordercolor="#111111" borderopacity="1" ns1:showpageshadow="0" ns1:pageopacity="0" ns1:pagecheckerboard="1" ns1:deskcolor="#d1d1d1" ns1:zoom="0.51660156" ns1:cx="481.99622" ns1:cy="142.27599" ns1:window-width="1440" ns1:window-height="900" ns1:window-x="0" ns1:window-y="0" ns1:window-maximized="0" ns1:current-layer="svg4" /><path d="M 519.83691,0.40204111 C 243.89495,-10.566117 11.324418,204.22689 0.40196015,480.16716 -10.56619,756.10802 204.27254,988.63153 480.16822,999.60014 756.10908,1010.5687 988.63259,795.77668 999.6012,519.83586 1010.5241,243.89502 795.72919,11.324491 519.83691,0.40204111 Z M 730.88041,732.84507 c -6.21431,10.96861 -18.32578,16.45433 -30.11722,14.80861 -3.60862,-0.50276 -7.22003,-1.69138 -10.60006,-3.61144 -66.08302,-37.61156 -138.10896,-62.10592 -214.06349,-72.80023 -75.95453,-10.6943 -151.95474,-6.9914 -225.8521,10.96862 -16.0412,3.88289 -32.17353,-5.94289 -36.05783,-21.98292 -3.88458,-16.04005 5.94088,-32.17438 21.98178,-36.05725 81.25624,-19.74291 164.79648,-23.81153 248.24535,-12.06578 83.4488,11.74575 162.60332,38.66301 235.3121,80.02311 14.30574,8.18006 19.3315,26.36867 11.19716,40.71728 z m 65.71733,-131.25183 c -10.19144,18.82864 -33.77153,25.86867 -52.60013,15.67719 -77.32598,-41.81727 -161.04905,-69.28308 -248.84074,-81.6231 -87.79169,-12.3372 -175.80913,-9.00286 -261.68167,9.87144 -4.66144,1.00586 -9.27717,1.18862 -13.75576,0.54862 -15.58404,-2.19449 -28.92866,-13.80003 -32.49324,-30.11722 -4.61572,-20.92864 8.63746,-41.63159 29.56838,-46.24872 94.91885,-20.88578 192.21632,-24.58578 289.19373,-10.96861 96.93171,13.62005 189.47485,43.96586 274.93509,90.21458 18.87437,10.19144 25.86581,33.7258 15.67434,52.60013 z m 72.8488,-147.93189 c -9.59716,18.46292 -29.56866,28.0144 -49.03727,25.27154 -5.2572,-0.73138 -10.42006,-2.37724 -15.40292,-4.93431 -90.02883,-46.84303 -187.00627,-77.78311 -288.23229,-91.99744 -101.22603,-14.21148 -203.00348,-11.19431 -302.44749,9.00289 -25.86636,5.25716 -51.04758,-11.46862 -56.30303,-37.29153 -5.25573,-25.86581 11.47089,-51.04588 37.29183,-56.30304 110.13804,-22.34664 222.74407,-25.68265 334.75585,-9.96289 112.01463,15.72291 219.31783,49.9973 319.03813,101.8689 23.39723,12.15431 32.49153,40.99156 20.33719,64.39161 z" fill="white" id="path1" style="fill:currentColor;fill-opacity:1;stroke-width:1" /></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
+        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+      </svg>
       Spotify
     </a>
 
@@ -393,8 +452,8 @@
 
     <!-- YouTube Music -->
     <a href="https://music.youtube.com" target="_blank" rel="noopener noreferrer" class="platform-link" aria-label="YouTube Music">
-      <svg fill="currentColor" viewBox="0 0 24 24" id="Youtube-Music-Logo--Streamline-Logos" height="16" width="16" aria-hidden="true" focusable="false">
-        <path fill="currentColor" fill-rule="evenodd" d="M23 12c0 6.075 -4.925 11 -11 11S1 18.075 1 12 5.925 1 12 1s11 4.925 11 11ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0 -10Zm-6 5a6 6 0 1 1 12 0 6 6 0 0 1 -12 0Zm9 0 -5 -3v6l5 -3Z" clip-rule="evenodd" stroke-width="1" />
+      <svg fill="currentColor" viewBox="0 0 24 24" height="16" width="16" aria-hidden="true" focusable="false">
+        <path fill="currentColor" fill-rule="evenodd" d="M23 12c0 6.075-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1s11 4.925 11 11ZM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm-6 5a6 6 0 1 1 12 0 6 6 0 0 1-12 0Zm9 0-5-3v6l5-3Z" clip-rule="evenodd" />
       </svg>
       YouTube Music
     </a>
@@ -402,47 +461,47 @@
   </nav>
 
   <!-- SOCIAL -->
-  <div class="social-row" aria-label="Social media">
+  <div class="social-row" role="list" aria-label="Social media links">
 
     <!-- SoundCloud -->
-    <a href="https://soundcloud.com/producedbybanga" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="BANGA on SoundCloud">
-      <svg width="20" height="12" viewBox="0 208.952 1048.713 581.696" fill="currentColor" aria-hidden="true">
+    <a href="https://soundcloud.com/producedbybanga" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="BANGA on SoundCloud" role="listitem">
+      <svg width="20" height="12" viewBox="0 208.952 1048.713 581.696" fill="currentColor" aria-hidden="true" focusable="false">
         <path d="M0 686.216c0 13.014 4.718 22.854 14.152 29.524 9.435 6.669 19.52 9.027 30.256 7.076 10.085-1.952 17.161-5.531 21.229-10.736 4.066-5.205 6.1-13.827 6.1-25.864v-141.52c0-10.086-3.497-18.626-10.492-25.62-6.994-6.995-15.534-10.492-25.62-10.492-9.76 0-18.137 3.497-25.132 10.492C3.498 526.07 0 534.61 0 544.696v141.52zm112.24 60.512c0 9.436 3.335 16.511 10.004 21.229 6.67 4.718 15.21 7.076 25.62 7.076 10.736 0 19.438-2.359 26.108-7.076 6.669-4.717 10.004-11.793 10.004-21.229V416.84c0-9.76-3.498-18.138-10.492-25.132-6.995-6.994-15.535-10.492-25.62-10.492-9.76 0-18.138 3.498-25.132 10.492-6.995 6.995-10.492 15.372-10.492 25.132v329.888zm111.752 15.616c0 9.435 3.416 16.511 10.248 21.229 6.832 4.717 15.616 7.076 26.353 7.076 10.41 0 18.95-2.359 25.619-7.076 6.67-4.718 10.005-11.794 10.005-21.229V461.248c0-10.085-3.498-18.707-10.492-25.864-6.995-7.157-15.372-10.735-25.132-10.735-10.086 0-18.707 3.578-25.864 10.735s-10.736 15.779-10.736 25.864v301.096zm112.24 1.464c0 17.894 12.037 26.841 36.112 26.841 24.074 0 36.111-8.947 36.111-26.841v-488c0-27.328-8.296-42.781-24.888-46.36-10.736-2.603-21.31.488-31.72 9.272-10.411 8.784-15.616 21.146-15.616 37.088v488zm114.193 14.152V247.016c0-16.917 5.042-27.002 15.128-30.256 21.797-5.205 43.432-7.808 64.904-7.808 49.775 0 96.136 11.712 139.079 35.136 42.944 23.424 77.674 55.388 104.188 95.892 26.515 40.505 41.887 85.156 46.116 133.957 19.845-8.459 40.991-12.688 63.439-12.688 45.547 0 84.506 16.104 116.876 48.312 32.371 32.209 48.557 70.923 48.557 116.145 0 45.547-16.186 84.424-48.557 116.632-32.37 32.208-71.166 48.312-116.388 48.312l-424.56-.488c-2.929-.976-5.125-2.766-6.589-5.368s-2.193-4.882-2.193-6.834z"/>
       </svg>
     </a>
 
     <!-- Instagram -->
-    <a href="https://instagram.com/producedbybanga" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="BANGA on Instagram">
-      <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-        <path d="M8 0C5.829 0 5.556 0.01 4.703 0.048 3.85 0.088 3.269 0.222 2.76 0.42a3.9 3.9 0 0 0 -1.417 0.923A3.9 3.9 0 0 0 0.42 2.76C0.222 3.268 0.087 3.85 0.048 4.7 0.01 5.555 0 5.827 0 8.001c0 2.172 0.01 2.444 0.048 3.297 0.04 0.852 0.174 1.433 0.372 1.942 0.205 0.526 0.478 0.972 0.923 1.417 0.444 0.445 0.89 0.719 1.416 0.923 0.51 0.198 1.09 0.333 1.942 0.372C5.555 15.99 5.827 16 8 16s2.444 -0.01 3.298 -0.048c0.851 -0.04 1.434 -0.174 1.943 -0.372a3.9 3.9 0 0 0 1.416 -0.923c0.445 -0.445 0.718 -0.891 0.923 -1.417 0.197 -0.509 0.332 -1.09 0.372 -1.942C15.99 10.445 16 10.173 16 8s-0.01 -2.445 -0.048 -3.299c-0.04 -0.851 -0.175 -1.433 -0.372 -1.941a3.9 3.9 0 0 0 -0.923 -1.417A3.9 3.9 0 0 0 13.24 0.42c-0.51 -0.198 -1.092 -0.333 -1.943 -0.372C10.443 0.01 10.172 0 7.998 0zm-0.717 1.442h0.718c2.136 0 2.389 0.007 3.232 0.046 0.78 0.035 1.204 0.166 1.486 0.275 0.373 0.145 0.64 0.319 0.92 0.599s0.453 0.546 0.598 0.92c0.11 0.281 0.24 0.705 0.275 1.485 0.039 0.843 0.047 1.096 0.047 3.231s-0.008 2.389 -0.047 3.232c-0.035 0.78 -0.166 1.203 -0.275 1.485a2.5 2.5 0 0 1 -0.599 0.919c-0.28 0.28 -0.546 0.453 -0.92 0.598 -0.28 0.11 -0.704 0.24 -1.485 0.276 -0.843 0.038 -1.096 0.047 -3.232 0.047s-2.39 -0.009 -3.233 -0.047c-0.78 -0.036 -1.203 -0.166 -1.485 -0.276a2.5 2.5 0 0 1 -0.92 -0.598 2.5 2.5 0 0 1 -0.6 -0.92c-0.109 -0.281 -0.24 -0.705 -0.275 -1.485 -0.038 -0.843 -0.046 -1.096 -0.046 -3.233s0.008 -2.388 0.046 -3.231c0.036 -0.78 0.166 -1.204 0.276 -1.486 0.145 -0.373 0.319 -0.64 0.599 -0.92s0.546 -0.453 0.92 -0.598c0.282 -0.11 0.705 -0.24 1.485 -0.276 0.738 -0.034 1.024 -0.044 2.515 -0.045zm4.988 1.328a0.96 0.96 0 1 0 0 1.92 0.96 0.96 0 0 0 0 -1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0 -8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0 -5.334"/>
+    <a href="https://instagram.com/producedbybanga" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="BANGA on Instagram" role="listitem">
+      <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
       </svg>
     </a>
 
     <!-- Threads -->
-    <a href="https://www.threads.com/producedbybanga" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="BANGA on Threads">
-      <svg width="18" height="18" viewBox="0 0 192 192" fill="currentColor" aria-hidden="true">
-        <path d="M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.5619 44.745C97.4484 44.7443 97.3355 44.7443 97.222 44.7443C82.2364 44.7443 69.7731 51.1409 62.102 62.7807L75.881 72.2328C81.6116 63.5383 90.6052 61.6848 97.2286 61.6848C97.3051 61.6848 97.3819 61.6848 97.4576 61.6855C105.707 61.7381 111.932 64.1366 115.961 68.814C118.893 72.2193 120.854 76.925 121.825 82.8638C114.511 81.6207 106.601 81.2385 98.145 81.7233C74.3247 83.0954 59.0111 96.9879 60.0396 116.292C60.5615 126.084 65.4397 134.508 73.775 140.011C80.8224 144.663 89.899 146.938 99.3323 146.423C111.79 145.74 121.563 140.987 128.381 132.296C133.559 125.696 136.834 117.143 138.28 106.366C144.217 109.949 148.617 114.664 151.047 120.332C155.179 129.967 155.42 145.8 142.501 158.708C131.182 170.016 117.576 174.908 97.0135 175.059C74.2042 174.89 56.9538 167.575 45.7381 153.317C35.2355 139.966 29.8077 120.682 29.6052 96C29.8077 71.3178 35.2355 52.0336 45.7381 38.6827C56.9538 24.4249 74.2039 17.11 97.0132 16.9405C119.988 17.1113 137.539 24.4614 149.184 38.788C154.894 45.8136 159.199 54.6488 162.037 64.9503L178.184 60.6422C174.744 47.9622 169.331 37.0357 161.965 27.974C147.036 9.60668 125.202 0.195148 97.0695 0H96.9569C68.8816 0.19447 47.2921 9.6418 32.7883 28.0793C19.8819 44.4864 13.2244 67.3157 13.0007 95.9325L13 96L13.0007 96.0675C13.2244 124.684 19.8819 147.514 32.7883 163.921C47.2921 182.358 68.8816 191.806 96.9569 192H97.0695C122.03 191.827 139.624 185.292 154.118 170.811C173.081 151.866 172.51 128.119 166.26 113.541C161.776 103.087 153.227 94.5962 141.537 88.9883ZM98.4405 129.507C88.0005 130.095 77.1544 125.409 76.6196 115.372C76.2232 107.93 81.9158 99.626 99.0812 98.6368C101.047 98.5234 102.976 98.468 104.871 98.468C111.106 98.468 116.939 99.0737 122.242 100.233C120.264 124.935 108.662 128.946 98.4405 129.507Z"/>
+    <a href="https://www.threads.com/producedbybanga" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="BANGA on Threads" role="listitem">
+      <svg width="18" height="18" viewBox="0 0 192 192" fill="currentColor" aria-hidden="true" focusable="false">
+        <path d="M141.537 88.9883C140.71 88.5919 139.87 88.2104 139.019 87.8451C137.537 60.5382 122.616 44.905 97.5619 44.745C97.4484 44.7443 97.3355 44.7443 97.222 44.7443C82.2364 44.7443 69.7731 51.1409 62.102 62.7807L75.881 72.2328C81.6116 63.5383 90.6052 61.6848 97.2286 61.6848C97.3051 61.6848 97.3819 61.6848 97.4576 61.6855C105.707 61.7381 111.932 64.1366 115.961 68.814C118.893 72.2193 120.854 76.925 121.825 82.8638C114.511 81.6207 106.601 81.2385 98.145 81.7233C74.3247 83.0954 59.0111 96.9879 60.0396 116.292C60.5615 126.084 65.4397 134.508 73.775 140.011C80.8224 144.663 89.899 146.938 99.3323 146.423C111.79 145.74 121.563 140.987 128.381 132.296C133.559 125.696 136.834 117.143 138.28 106.366C144.217 109.949 148.617 114.664 151.047 120.332C155.179 129.967 155.42 145.8 142.501 158.708C131.182 170.016 117.576 174.908 97.0135 175.059C74.2042 174.89 56.9538 167.575 45.7381 153.317C35.2355 139.966 29.8077 120.682 29.6052 96C29.8077 71.3178 35.2355 52.0336 45.7381 38.6827C56.9538 24.4249 74.2039 17.11 97.0132 16.9405C119.988 17.1113 137.539 24.4614 149.184 38.788C154.894 45.8136 159.199 54.6488 162.037 64.9503L178.184 60.6422C174.744 47.9622 169.331 37.0357 161.965 27.974C147.036 9.60668 125.202 0.195148 97.0695 0H96.9569C68.8816 0.19447 47.2921 9.6418 32.7883 28.0793C19.8819 44.4864 13.2244 67.3157 13.0007 95.9325L13 96l.0007.0675C13.2244 124.684 19.8819 147.514 32.7883 163.921C47.2921 182.358 68.8816 191.806 96.9569 192H97.0695C122.03 191.827 139.624 185.292 154.118 170.811C173.081 151.866 172.51 128.119 166.26 113.541C161.776 103.087 153.227 94.5962 141.537 88.9883ZM98.4405 129.507C88.0005 130.095 77.1544 125.409 76.6196 115.372C76.2232 107.93 81.9158 99.626 99.0812 98.6368C101.047 98.5234 102.976 98.468 104.871 98.468C111.106 98.468 116.939 99.0737 122.242 100.233C120.264 124.935 108.662 128.946 98.4405 129.507Z"/>
       </svg>
     </a>
 
     <!-- X -->
-    <a href="https://x.com/producedbybanga" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="BANGA on X">
-      <svg width="16" height="16" viewBox="0 0 300 271" fill="currentColor" aria-hidden="true">
+    <a href="https://x.com/producedbybanga" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="BANGA on X" role="listitem">
+      <svg width="16" height="16" viewBox="0 0 300 271" fill="currentColor" aria-hidden="true" focusable="false">
         <path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"/>
       </svg>
     </a>
 
     <!-- Facebook -->
-    <a href="https://www.facebook.com/profile.php?id=61594411521509" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="BANGA on Facebook">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <a href="https://www.facebook.com/profile.php?id=61594411521509" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="BANGA on Facebook" role="listitem">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
         <path d="M22 12C22 6.47714 17.5229 1.99999 12 1.99999C6.47715 1.99999 2 6.47714 2 12C2 16.9913 5.65686 21.1283 10.4375 21.8785V14.8906H7.89844V12H10.4375V9.79687C10.4375 7.29062 11.9304 5.90624 14.2146 5.90624C15.3087 5.90624 16.4531 6.10155 16.4531 6.10155V8.56249H15.1921C13.9499 8.56249 13.5625 9.33333 13.5625 10.1242V12H16.3359L15.8926 14.8906H13.5625V21.8785C18.3431 21.1283 22 16.9913 22 12Z"/>
       </svg>
     </a>
 
   </div>
 
-  <footer class="footer">
-    © 2026 BANGA MUSIC.
+  <footer class="footer" role="contentinfo">
+    &copy; 2026 BANGA MUSIC.
   </footer>
 
 </main>
@@ -451,18 +510,12 @@
   // Block right-click context menu
   document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
-    return false;
   });
 
-  // Block common keyboard shortcuts for saving/copying page content
+  // Block Ctrl/Cmd + S (save page) and Ctrl/Cmd + U (view source)
   document.addEventListener('keydown', function(e) {
-    // Block Ctrl/Cmd + S (save), Ctrl/Cmd + U (view source), Ctrl/Cmd + Shift + I (devtools)
-    const blocked = (
-      (e.ctrlKey || e.metaKey) && ['s', 'u'].includes(e.key.toLowerCase())
-    );
-    if (blocked) {
+    if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'S' || e.key === 'u' || e.key === 'U')) {
       e.preventDefault();
-      return false;
     }
   });
 
@@ -475,11 +528,10 @@
       var icon = document.getElementById('cta-icon');
       var btn = document.getElementById('cta-btn');
       if (label) label.textContent = 'Stream Now';
-      btn.setAttribute('aria-label', 'Stream TELLER on Spotify');
-      // Swap Spotify icon for a play icon
+      if (btn) btn.setAttribute('aria-label', 'Stream TELLER on Spotify');
       if (icon) {
-        icon.innerHTML = '<path d="M8 5v14l11-7z"/>';
         icon.setAttribute('viewBox', '0 0 24 24');
+        icon.innerHTML = '<path d="M8 5v14l11-7z"/>';
       }
     }
   })();
