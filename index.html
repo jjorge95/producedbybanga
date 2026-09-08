@@ -10,9 +10,9 @@
   <meta property="og:title" content="BANGA — TELLER" />
   <meta property="og:description" content="Debut single available September 25, 2026." />
   <meta property="og:type" content="music.song" />
-  <meta property="og:image" content="https://producedbybanga.com/BANGA.webp" />
-  <meta property="og:image:width" content="1340" />
-  <meta property="og:image:height" content="894" />
+  <meta property="og:image" content="https://producedbybanga.com/BANGA-optimized.webp" />
+  <meta property="og:image:width" content="680" />
+  <meta property="og:image:height" content="680" />
   <meta property="og:image:alt" content="BANGA — TELLER cover art" />
   <meta property="og:url" content="https://producedbybanga.com" />
   <meta property="og:site_name" content="BANGA Music" />
@@ -22,7 +22,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="BANGA — TELLER" />
   <meta name="twitter:description" content="Debut single available September 25, 2026." />
-  <meta name="twitter:image" content="https://producedbybanga.com/BANGA.webp" />
+  <meta name="twitter:image" content="https://producedbybanga.com/BANGA-optimized.webp" />
   <meta name="twitter:image:alt" content="BANGA — TELLER cover art" />
 
   <!-- Canonical — must be <link>, not <meta> -->
@@ -61,11 +61,11 @@
   }
   </script>
 
-  <!-- Fonts -->
+  <!-- Fonts: load async via media trick to eliminate render-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500&display=swap" /></noscript>
 
   <style>
     *, *::before, *::after {
@@ -88,7 +88,8 @@
       height: 100%;
       background: var(--black);
       color: var(--white);
-      font-family: 'Inter', sans-serif;
+      /* System font fallback renders immediately; Inter swaps in when loaded */
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       font-weight: 300;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -180,7 +181,7 @@
     }
 
     .song-title {
-      font-family: 'Bebas Neue', sans-serif;
+      font-family: 'Bebas Neue', 'Arial Narrow', Arial, sans-serif;
       font-size: clamp(52px, min(22vw, 11svh), 148px);
       line-height: 0.88;
       letter-spacing: 0.04em;
@@ -392,7 +393,7 @@
   <!-- COVER ART -->
   <div class="cover-wrap">
     <img
-      src="BANGA.webp"
+      src="BANGA-optimized.webp"
       alt="BANGA — TELLER cover art"
       class="cover-art"
       draggable="false"
