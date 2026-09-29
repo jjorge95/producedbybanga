@@ -4,24 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BANGA — TELLER</title>
-  <meta name="description" content="TELLER — the debut single from BANGA. Available September 25, 2026." />
+  <meta name="description" content="TELLER — the debut single from BANGA. Out now on all platforms." />
+
+  <!-- Favicon (swap for a square PNG later if you want maximum browser support) -->
+  <link rel="icon" href="banga-teller-art.webp" type="image/webp" />
+  <link rel="apple-touch-icon" href="banga-teller-art.webp" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="BANGA — TELLER" />
-  <meta property="og:description" content="TELLER single available September 25, 2026." />
+  <meta property="og:description" content="TELLER, the debut single from BANGA. Out now." />
   <meta property="og:type" content="music.song" />
   <meta property="og:image" content="https://producedbybanga.com/banga-teller-art.webp" />
-  <meta property="og:image:width" content="300" />
-  <meta property="og:image:height" content="300" />
+  <meta property="og:image:width" content="640" />
+  <meta property="og:image:height" content="640" />
   <meta property="og:image:alt" content="BANGA — TELLER cover art" />
   <meta property="og:url" content="https://producedbybanga.com" />
   <meta property="og:site_name" content="BANGA Music" />
   <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter / X Card -->
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- Twitter / X Card (summary = square image, no awkward cropping) -->
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="BANGA — TELLER" />
-  <meta name="twitter:description" content="Debut single available September 25, 2026." />
+  <meta name="twitter:description" content="Debut single out now." />
   <meta name="twitter:image" content="https://producedbybanga.com/banga-teller-art.webp" />
   <meta name="twitter:image:alt" content="BANGA — TELLER cover art" />
 
@@ -30,7 +34,7 @@
 
   <!-- Misc -->
   <meta name="theme-color" content="#000000" />
-  <meta name="keywords" content="BANGA, TELLER, debut single, music release 2026, Spotify, Apple Music" />
+  <meta name="keywords" content="BANGA, TELLER, debut single, new music 2026, Spotify, Apple Music, YouTube Music" />
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -43,23 +47,27 @@
       "name": "BANGA",
       "url": "https://producedbybanga.com",
       "sameAs": [
-        "https://open.spotify.com",
         "https://soundcloud.com/producedbybanga",
         "https://instagram.com/producedbybanga"
       ]
     },
+    "datePublished": "2026-09-25",
     "releaseDate": "2026-09-25",
     "url": "https://producedbybanga.com",
     "image": "https://producedbybanga.com/banga-teller-art.webp",
     "description": "Debut single from BANGA",
     "musicReleaseFormat": "SingleRelease",
     "distribution": [
-      {"@type": "MusicStore", "name": "Spotify", "url": "https://open.spotify.com"},
-      {"@type": "MusicStore", "name": "Apple Music", "url": "https://music.apple.com"},
-      {"@type": "MusicStore", "name": "YouTube Music", "url": "https://music.youtube.com"}
+      {"@type": "MusicStore", "name": "Spotify", "url": "https://open.spotify.com/track/5CeDpKCLrDK2l74dvDTueb"},
+      {"@type": "MusicStore", "name": "Apple Music", "url": "https://music.apple.com/us/album/teller-single/6808933741"},
+      {"@type": "MusicStore", "name": "YouTube Music", "url": "https://music.youtube.com/watch?v=fBAwU65ovv8"}
     ]
   }
   </script>
+
+  <!-- ANALYTICS (optional): uncomment and replace the domain to track visits and button clicks with Plausible.
+  <script defer data-domain="producedbybanga.com" src="https://plausible.io/js/script.js"></script>
+  -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -278,7 +286,7 @@
       margin-bottom: 2px;
     }
 
-    /* UPDATED: White-filled buttons, black text, centered layout */
+    /* White-filled buttons, black text, centered layout */
     .btn-stream {
       display: inline-flex;
       align-items: center;
@@ -480,6 +488,16 @@
       <span>Apple Music</span>
     </a>
 
+    <!-- YouTube Music -->
+    <a href="https://music.youtube.com/watch?v=fBAwU65ovv8" target="_blank" rel="noopener noreferrer" class="btn-stream" aria-label="Stream TELLER on YouTube Music">
+      <span class="btn-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 0C5.376 0 0 5.376 0 12s5.376 12 12 12 12-5.376 12-12S18.624 0 12 0zm0 19.104c-3.924 0-7.104-3.18-7.104-7.104S8.076 4.896 12 4.896s7.104 3.18 7.104 7.104-3.18 7.104-7.104 7.104zm0-13.332c-3.432 0-6.228 2.796-6.228 6.228S8.568 18.228 12 18.228 18.228 15.432 18.228 12 15.432 5.772 12 5.772zM9.684 15.54V8.46L15.816 12l-6.132 3.54z"/>
+        </svg>
+      </span>
+      <span>YouTube Music</span>
+    </a>
+
     <!-- iTunes -->
     <a href="https://music.apple.com/us/album/teller-single/6808933741?uo=4&app=itunes&at=1001lry3&ct=dashboard" target="_blank" rel="noopener noreferrer" class="btn-stream" aria-label="Buy TELLER on iTunes">
       <span class="btn-icon">
@@ -557,7 +575,7 @@
   });
 
   // ── Audio Player ──────────────────────────────────────────────
-  // 👉 Replace 'snippet.mp3' with your actual hosted file path/URL
+  // 👉 Make sure snippet.mp3 is uploaded next to this file, or update the path/URL
   var SNIPPET_SRC = 'snippet.mp3';
 
   var audio = new Audio();
